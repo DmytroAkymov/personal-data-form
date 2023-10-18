@@ -1,0 +1,33 @@
+body {
+    margin: 30px;
+}
+
+.user-form {
+    background-color: coral;
+    border-radius: 10px;
+    max-width: 400px;
+    min-height: 180px;
+    padding: 25px;
+    margin: 0 auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+.form-input {
+}
+
+.input-label {
+    width: 100%;
+}
+
+.name-input {
+    width: 100%;
+}
+
+.age-input {
+    width: 100%;
+}
+
+.create-user {
+    all: initial;
+    width: 100%;
+}
