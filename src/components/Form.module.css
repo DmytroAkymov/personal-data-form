@@ -1,6 +1,7 @@
 /* Form.module.css */
 body {
     margin-top: 15px;
+    font-family: 'VT323', monospace;
 }
 
 .user-form {
@@ -29,7 +30,7 @@ h1 {
 
 .input-label {
     color: #018b5a;
-    font-size: 16px;
+    font-size: 20px;
     margin-bottom: 5px;
 }
 
@@ -46,6 +47,8 @@ h1 {
 }
 
 .btn-create-user {
+    font-family: 'VT323', monospace;
+    font-size: 20px;
     background: #018b5a;
     color: #94d9d4;
     padding: 10px 20px;
