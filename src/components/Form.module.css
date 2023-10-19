@@ -13,12 +13,13 @@ body {
     border: 1px solid #94d9d4;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 h1 {
     color: #018b5a;
     font-size: 24px;
-    text-align: center;
+
     margin: 0 0 20px;
 }
 
@@ -55,10 +56,14 @@ h1 {
     border: none;
     border-radius: 3px;
     cursor: pointer;
+    width: 40%;
 }
 
 @media (max-width: 768px) {
     .user-form {
         max-width: 80%;
+    }
+    .btn-create-user {
+        width: 100%;
     }
 }
