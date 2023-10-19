@@ -1,8 +1,13 @@
 /* ListItem.module.css */
 .list-item {
-    font-size: 1rem; /* Устанавливаем размер шрифта */
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem; /* Устанавливаем размер шрифта */
     margin-bottom: 0.5rem; /* Расстояние между элементами списка */
-    color: #333; /* Цвет текста */
+    color: #018b5a; /* Цвет текста */
     list-style-type: none;
-    text-align: center;
+    text-align: left;
+    background-color: white;
+    border-radius: 3px;
+    padding: 10px;
 }
