@@ -1,0 +1,8 @@
+/* ListItem.module.css */
+.list-item {
+    font-size: 1rem; /* Устанавливаем размер шрифта */
+    margin-bottom: 0.5rem; /* Расстояние между элементами списка */
+    color: #333; /* Цвет текста */
+    list-style-type: none;
+    text-align: center;
+}
