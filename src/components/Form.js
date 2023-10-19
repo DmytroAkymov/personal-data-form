@@ -13,7 +13,7 @@ const Form = () => {
                 <labe className={styles['input-label']}>Age:</labe>
                 <input type="number" id="age" className={styles['age-input']} />
             </div>
-            <button className={styles['create-user']} type="submit">
+            <button className={styles['btn-create-user']} type="submit">
                 Create a user
             </button>
         </div>
