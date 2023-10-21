@@ -16,14 +16,24 @@ const Form = (props) => {
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
+        if (addName.trim() === '') {
+            return props.setModalWindow(false);
+        }
+        if (addAge.trim() === '' || addAge <= 0) {
+            return props.setModalWindow(false);
+        }
         props.addUserHandler({ name: addName, age: addAge, id: uuidv4() });
+        setAddName('');
+        setAddAge('');
     };
 
     return (
         <form className={styles['user-form']} onSubmit={handleFormSubmit}>
             <h1>Enter user details:</h1>
             <div className={styles['form-input']}>
-                <label className={styles['input-label']}>Name:</label>
+                <label htmlFor="name" className={styles['input-label']}>
+                    Name:
+                </label>
                 <input
                     type="text"
                     id="name"
@@ -33,7 +43,9 @@ const Form = (props) => {
                 />
             </div>
             <div className={styles['form-input']}>
-                <label className={styles['input-label']}>Age:</label>
+                <label htmlFor="age" className={styles['input-label']}>
+                    Age:
+                </label>
                 <input
                     type="number"
                     id="age"

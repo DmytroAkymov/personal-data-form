@@ -3,6 +3,7 @@ import { useState } from 'react';
 import './App.css';
 import Form from './components/Form';
 import List from './components/List';
+import ModalWindow from './components/ModalWindow';
 
 function App() {
     const [usersData, setUsersData] = useState([
@@ -21,10 +22,25 @@ function App() {
         });
         setUsersData(newUsersData);
     };
+
+    const [modalWindow, setModalWindow] = useState(true);
+
     return (
         <div className="App">
-            <Form addUserHandler={addUserHandler} />
-            <List users={usersData} deleteUserHandler={deleteUserHandler} />
+            {!modalWindow ? (
+                <ModalWindow setModalWindow={setModalWindow} />
+            ) : (
+                <>
+                    <Form
+                        addUserHandler={addUserHandler}
+                        setModalWindow={setModalWindow}
+                    />
+                    <List
+                        users={usersData}
+                        deleteUserHandler={deleteUserHandler}
+                    />
+                </>
+            )}
         </div>
     );
 }
