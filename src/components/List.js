@@ -7,7 +7,10 @@ const List = (props) => {
         <div className={styles['list-container']}>
             <h2>All users</h2>
             <ul>
-                <ListItem users={props.users} />
+                <ListItem
+                    users={props.users}
+                    deleteUserHandler={props.deleteUserHandler}
+                />
             </ul>
         </div>
     );

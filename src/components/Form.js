@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import styles from './Form.module.css';
 
 const Form = (props) => {
@@ -15,7 +16,7 @@ const Form = (props) => {
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
-        props.addUserHandler({ name: addName, age: addAge });
+        props.addUserHandler({ name: addName, age: addAge, id: uuidv4() });
     };
 
     return (
