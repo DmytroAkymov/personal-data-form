@@ -1,17 +1,23 @@
+import { useState } from 'react';
 import './App.css';
 import Form from './components/Form';
 import List from './components/List';
 
 function App() {
-    const USERS_DATA = [
-        { name: 'Dmytro', age: 36, id: 't1' },
-        { name: 'Tetiana', age: 29, id: 't2' },
-        { name: 'Emilia', age: 0.3, id: 't3' },
-    ];
+    const [usersData, setUsersData] = useState([
+        { name: 'Dmytro', age: 36 },
+        { name: 'Tetiana', age: 29 },
+        { name: 'Emilia', age: 3 },
+    ]);
+
+    const addUserHandler = (user) => {
+        setUsersData([...usersData, user]);
+    };
+
     return (
         <div className="App">
-            <Form />
-            <List users={USERS_DATA} />
+            <Form addUserHandler={addUserHandler} />
+            <List users={usersData} />
         </div>
     );
 }
