@@ -6,8 +6,9 @@ const Button = (props) => {
         <button
             className={Styles['btn-create-user']}
             type={props.type || 'button'}
+            onClick={props.onClick}
         >
-            Create user
+            {props.children}
         </button>
     );
 };

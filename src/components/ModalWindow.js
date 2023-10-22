@@ -1,4 +1,5 @@
 import styles from './ModalWindow.module.css';
+import Button from './UI/Button';
 
 const ModalWindow = (props) => {
     return (
@@ -9,7 +10,9 @@ const ModalWindow = (props) => {
                     props.setModalWindow(true);
                 }}
             >
-                <h2>Data entered incorrectly</h2>
+                <h2>{props.title}</h2>
+                <p>{props.message}</p>
+                <Button>Close</Button>
             </div>
         </div>
     );

@@ -17,11 +17,16 @@ const Form = (props) => {
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
-        if (addName.trim() === '') {
-            return props.setModalWindow(false);
+        if (addName.trim().length === 0) {
+            props.setModalWindow(false);
+            props.fn({ title: 'Edit the name', message: 'Enter your name' });
+            return;
         }
+
         if (addAge.trim() === '' || addAge <= 0) {
-            return props.setModalWindow(false);
+            props.setModalWindow(false);
+            props.fn({ title: 'Edit the age', message: 'Enter your age' });
+            return;
         }
         props.addUserHandler({ name: addName, age: addAge, id: uuidv4() });
         setAddName('');
@@ -55,7 +60,7 @@ const Form = (props) => {
                     onChange={handleAgeChange}
                 />
             </div>
-            <Button type="submit" />
+            <Button type="submit">Create user</Button>
         </form>
     );
 };

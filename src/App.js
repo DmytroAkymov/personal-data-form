@@ -12,8 +12,13 @@ function App() {
         { name: 'Emilia', age: 3, id: 't5' },
     ]);
 
+    const [modalWindow, setModalWindow] = useState(true);
+    const [message, setMessage] = useState('');
+
     const addUserHandler = (user) => {
-        setUsersData([...usersData, user]);
+        setUsersData((prevUserList) => {
+            return [...prevUserList, user];
+        });
     };
 
     const deleteUserHandler = (id) => {
@@ -23,24 +28,28 @@ function App() {
         setUsersData(newUsersData);
     };
 
-    const [modalWindow, setModalWindow] = useState(true);
+    const createMessageError = (message) => {
+        return setMessage(message);
+    };
 
     return (
         <div className="App">
-            {!modalWindow ? (
-                <ModalWindow setModalWindow={setModalWindow} />
-            ) : (
-                <>
-                    <Form
-                        addUserHandler={addUserHandler}
+            <>
+                {!modalWindow && (
+                    <ModalWindow
                         setModalWindow={setModalWindow}
+                        title={message.title}
+                        message={message.message}
                     />
-                    <List
-                        users={usersData}
-                        deleteUserHandler={deleteUserHandler}
-                    />
-                </>
-            )}
+                )}
+
+                <Form
+                    addUserHandler={addUserHandler}
+                    setModalWindow={setModalWindow}
+                    fn={createMessageError}
+                />
+                <List users={usersData} deleteUserHandler={deleteUserHandler} />
+            </>
         </div>
     );
 }
