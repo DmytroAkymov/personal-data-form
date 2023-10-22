@@ -1,0 +1,12 @@
+.btn-create-user {
+    font-family: 'VT323', monospace;
+    font-size: 16px;
+    background: #018b5a;
+    color: #94d9d4;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 60%;
+    margin: 0 auto;
+}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import styles from './Form.module.css';
+import Button from './UI/Button';
 
 const Form = (props) => {
     const [addName, setAddName] = useState('');
@@ -54,9 +55,7 @@ const Form = (props) => {
                     onChange={handleAgeChange}
                 />
             </div>
-            <button className={styles['btn-create-user']} type="submit">
-                Create a user
-            </button>
+            <Button type="submit" />
         </form>
     );
 };

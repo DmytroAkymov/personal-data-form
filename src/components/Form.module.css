@@ -42,18 +42,6 @@ h1 {
     outline: 2px solid #94d9d4;
 }
 
-.btn-create-user {
-    font-family: 'VT323', monospace;
-    font-size: 16px;
-    background: #018b5a;
-    color: #94d9d4;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    width: 60%;
-}
-
 @media (max-width: 768px) {
     .user-form {
         max-width: 80%;
